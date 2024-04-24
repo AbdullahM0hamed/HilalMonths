@@ -11,7 +11,8 @@
         "Jamiatul Ulama SA",
         "Jamiat Ulama-i-Hind",
         "Roeyat E Hilal Comité Nederland",
-        "Centro Islamico Culturale d'Italia"
+        "Centro Islamico Culturale d'Italia",
+        "Central Ruet-e-Hilal Committee Pakistan"
     ],
     "New Crescent Society": {
         "1445": {
@@ -698,6 +699,7 @@
         }
     },
     "Centro Islamico Culturale d'Italia": {
+        "1445": {
             "1": "19/7/2023",
             "2": "17/8/2023",
             "3": "16/9/2023",
@@ -708,5 +710,20 @@
             "8": "12/2/2024",
             "9": "12/3/2024",
             "10": "10/4/2024"
+        }
+    },
+    "Central Ruet-e-Hilal Committee Pakistan": {
+        "1445": {
+            "1": "20/7/2023",
+            "2": "19/8/2023",
+            "3": "18/9/2023",
+            "4": "17/10/2023",
+            "5": "16/11/2023",
+            "6": "15/12/2023",
+            "7": "13/1/2024",
+            "8": "12/2/2024",
+            "9": "12/3/2024",
+            "10": "10/4/2024"
+        }
     }
 }
