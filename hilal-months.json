@@ -12,7 +12,8 @@
         "Jamiat Ulama-i-Hind",
         "Roeyat E Hilal Comité Nederland",
         "Centro Islamico Culturale d'Italia",
-        "Central Ruet-e-Hilal Committee Pakistan"
+        "Central Ruet-e-Hilal Committee Pakistan",
+        "Supreme Court Of Afghanistan"
     ],
     "New Crescent Society": {
         "1445": {
@@ -723,6 +724,17 @@
             "7": "13/1/2024",
             "8": "12/2/2024",
             "9": "12/3/2024",
+            "10": "10/4/2024"
+        }
+    },
+    "Supreme Court Of Afghanistan": {
+        "1445": {
+            "4": "16/10/2023",
+            "5": "15/11/2023",
+            "6": "15/12/2023",
+            "7": "13/1/2024",
+            "8": "12/2/2024",
+            "9": "11/3/2024",
             "10": "10/4/2024"
         }
     }
