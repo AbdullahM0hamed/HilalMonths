@@ -22,7 +22,8 @@
         "Darul Uloom Trinidad and Tobago",
         "Kenya Fatwa Council",
         "Ruyat-e-Hilal Committee-Japan",
-        "National Moonsighting Committee Malawi"
+        "National Moonsighting Committee Malawi",
+        "Central Moon Sighting Committee Of Guyana"
     ],
     "New Crescent Society": {
         "1446": {
@@ -954,6 +955,11 @@
         }
     },
     "National Moonsighting Committee Malawi": {
+        "1446": {
+            "1": "08/7/2024",
+            "2": "06/8/2024",
+            "3": "05/9/2024"
+        },
         "1445": {
             "1": "19/7/2023",
             "2": "18/8/2023",
@@ -967,11 +973,27 @@
             "10": "11/4/2024",
             "11": "10/5/2024",
             "12": "08/6/2024"
-        },
+        }
+    },
+    "Central Moon Sighting Committee Of Guyana": {
         "1446": {
             "1": "08/7/2024",
             "2": "06/8/2024",
             "3": "05/9/2024"
-        } 
+        },
+        "1445": {
+            "1": "19/7/2023",
+            "2": "18/8/2023",
+            "3": "17/9/2023",
+            "4": "16/10/2023",
+            "5": "15/11/2023",
+            "6": "15/12/2023",
+            "7": "13/1/2024",
+            "8": "11/2/2024",
+            "9": "12/3/2024",
+            "10": "11/4/2024",
+            "11": "10/5/2024",
+            "12": "08/6/2024"
+        }
     }
 }
