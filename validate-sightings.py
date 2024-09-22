@@ -1,5 +1,6 @@
 import json
 import re
+import sys
 
 from datetime import datetime
 
@@ -35,8 +36,8 @@ def validate_group(group, jsonified, text):
             print(f'✅ - {group} Data Exists')
             print(f'✅ - {group} Valid JSON')
         else:
-            print(f'❎ - {group} Data Exists')
-            print(f'❎ - {group} Valid JSON')
+            print(f'❎ - {group} Data Exists', file=sys.stderr)
+            print(f'❎ - {group} Valid JSON', file=sys.stderr)
     else:
         try:
             group_data = get_group(group, text)
@@ -45,16 +46,16 @@ def validate_group(group, jsonified, text):
             print(f'✅ - {group} Valid JSON')
         except (Exception, json.decoder.JSONDecodeError) as e:
             if type(e) is json.decoder.JSONDecodeError:
-                print(f'❎ - {group} Valid JSON')
+                print(f'❎ - {group} Valid JSON', file=sys.stderr)
             else:
-                print(f'❎ - {group} Data Exists')
+                print(f'❎ - {group} Data Exists', file=sys.stderr)
 
     if group_json:
         years = [*group_json.keys()]
         if [x for x in years if re.search('^\d+$', x)] == years:
             print(f'✅ - {group} Numeric Years')
         else:
-            print(f'❎ - {group} Numeric Years')
+            print(f'❎ - {group} Numeric Years', file=sys.stderr)
             print('Invalid Year(s): ' + ' and '.join([x for x in years if not re.search('^\d+$', x)]) + f' for {group}')
 
         years.sort(key=int)
@@ -117,7 +118,7 @@ def validate_group(group, jsonified, text):
                                 if not skip:
                                     if valid_diffs:
                                         valid_diffs = False
-                                        print(f'❎ - {group} Valid Distance Between Dates')
+                                        print(f'❎ - {group} Valid Distance Between Dates', file=sys.stderr)
 
                                     invalid_diffs.append(f'{curr[0]}/{curr[1]}: {date} to {previous[0]}/{previous[1]}: {prev}')
                                 else:
@@ -134,13 +135,13 @@ def validate_group(group, jsonified, text):
         if numeric:
             print(f'✅ - {group} Numeric Months')
         else:
-            print(f'❎ - {group} Numeric Months')
+            print(f'❎ - {group} Numeric Months', file=sys.stderr)
             print(f'Invalid Month(s) For {group}: ' + ','.join(non_numeric))
 
         if not invalid_dates:
             print(f'✅ - {group} Valid Dates')
         else:
-            print(f'❎ - {group} Valid Dates')
+            print(f'❎ - {group} Valid Dates', file=sys.stderr)
             print(f'Invalid Date(s) For {group}: ' + ', '.join(invalid_dates))
 
 
@@ -149,7 +150,7 @@ try:
     jsonified = json.loads(sightings)
     print('✅ - Valid JSON')
 except json.decoder.JSONDecodeError:
-    print('❎ - Valid JSON')
+    print('❎ - Valid JSON', file=sys.stderr)
 
 groups = []
 
@@ -164,4 +165,4 @@ try:
     for group in groups:
         validate_group(group, jsonified, sightings)
 except (KeyError, AttributeError):
-    print('❎ - Valid Groups')
+    print('❎ - Valid Groups', file=sys.stderr)
