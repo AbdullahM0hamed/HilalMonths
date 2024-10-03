@@ -144,7 +144,6 @@ def validate_group(group, jsonified, text):
             print(f'❎ - {group} Valid Dates', file=sys.stderr)
             print(f'Invalid Date(s) For {group}: ' + ', '.join(invalid_dates))
 
-
 jsonified = None
 try:
     jsonified = json.loads(sightings)
