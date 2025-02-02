@@ -27,7 +27,8 @@
         "Islamic Foundation Bangladesh",
         "Al-Iftaa Jordan",
         "Lembaga Falakiyah PBNU",
-        "Ministry Of Islamic Affairs - Mauritania"
+        "Ministry Of Islamic Affairs - Mauritania",
+        "The Grand Mufti's Office Of Zanzibar"
     ],
     "New Crescent Society": {
         "1446": {
@@ -1220,6 +1221,22 @@
             "8": "11/2/2024",
             "9": "11/3/2024",
             "10": "10/4/2024",
+            "11": "10/5/2024",
+            "12": "08/6/2024"
+        }
+    },
+    "The Grand Mufti's Office Of Zanzibar": {
+        "1446": {
+            "1": "08/7/2024",
+            "2": "06/8/2024",
+            "3": "05/9/2024",
+            "4": "05/10/2024",
+            "5": "03/11/2024",
+            "6": "03/12/2024",
+            "7": "02/1/2025",
+            "8": "31/1/2025"
+        },
+        "1445": {
             "11": "10/5/2024",
             "12": "08/6/2024"
         }
