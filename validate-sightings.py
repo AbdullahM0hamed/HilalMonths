@@ -8,15 +8,15 @@ sightings = open('hilal-months.json', 'r').read()
 jsonified = {}
 
 def get_groups(text):
-    return re.findall('"(.*?)"', re.search("groups.:\s\[(.*)\]", text, re.S).group(1))
+    return re.findall('"(.*?)"', re.search(r"groups.:\s\[(.*)\]", text, re.S).group(1))
 
 def get_group(group, text):
     group_data = ""
 
     try:
-        group_data = "".join(re.search(f'"{group}"' + ':\s*(\{.*?)(,\n\s*"[A-Za-z]+)', text, re.S).group(1))
+        group_data = "".join(re.search(f'"{group}"' + r':\s*(\{.*?)(,\n\s*"[A-Za-z]+)', text, re.S).group(1))
     except AttributeError:
-        group_data = "".join(re.search(f'"{group}"' + ':\s*(\{.*?.*)\}\s*\Z', text, re.S).group(1))
+        group_data = "".join(re.search(f'"{group}"' + r':\s*(\{.*?.*)\}\s*\Z', text, re.S).group(1))
 
     return group_data
 
@@ -52,11 +52,11 @@ def validate_group(group, jsonified, text):
 
     if group_json:
         years = [*group_json.keys()]
-        if [x for x in years if re.search('^\d+$', x)] == years:
+        if [x for x in years if re.search(r'^\d+$', x)] == years:
             print(f'✅ - {group} Numeric Years')
         else:
             print(f'❎ - {group} Numeric Years', file=sys.stderr)
-            print('Invalid Year(s): ' + ' and '.join([x for x in years if not re.search('^\d+$', x)]) + f' for {group}')
+            print('Invalid Year(s): ' + ' and '.join([x for x in years if not re.search(r'^\d+$', x)]) + f' for {group}')
 
         years.sort(key=int)
         years = years[::-1]
@@ -75,9 +75,9 @@ def validate_group(group, jsonified, text):
 
         for y_index, year in enumerate(years):
             months = [*group_json[year].keys()]
-            if [x for x in months if re.search('^\d+$', x)] != months:
+            if [x for x in months if re.search(r'^\d+$', x)] != months:
                 numeric = False
-                non_numeric.extend([f'{x}/{year}' for x in months if not re.search('^\d+$', x)])
+                non_numeric.extend([f'{x}/{year}' for x in months if not re.search(r'^\d+$', x)])
 
             months.sort(key=int)
             months = months[::-1]
